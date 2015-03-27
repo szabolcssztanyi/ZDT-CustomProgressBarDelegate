@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CustomProgressBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG0-IR-LCV">
+                                <rect key="frame" x="222" y="542" width="156" height="30"/>
+                                <state key="normal" title="Animate progress view">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateProgressView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="miF-OE-j01"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81u-On-AQT" customClass="ProgressView" customModule="CustomProgressBar" customModuleProvider="target">
+                                <rect key="frame" x="150" y="100" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5ew-pp-j6G"/>
+                                    <constraint firstAttribute="height" constant="300" id="wPb-er-vnl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tet-tw-w6v">
+                                <rect key="frame" x="234" y="484" width="132" height="30"/>
+                                <state key="normal" title="Hide progress view">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentProgressView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GQd-Ir-7Ws"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NG0-IR-LCV" firstAttribute="top" secondItem="Tet-tw-w6v" secondAttribute="bottom" constant="28" id="4aC-mv-xQF"/>
+                            <constraint firstItem="81u-On-AQT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="CGb-yJ-AIY"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NG0-IR-LCV" secondAttribute="bottom" constant="28" id="kOp-9N-ecH"/>
+                            <constraint firstItem="NG0-IR-LCV" firstAttribute="leading" secondItem="Tet-tw-w6v" secondAttribute="leading" constant="-12" id="noF-Hu-cKM"/>
+                            <constraint firstAttribute="centerX" secondItem="81u-On-AQT" secondAttribute="centerX" id="rd8-5c-icj"/>
+                            <constraint firstItem="Tet-tw-w6v" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ynL-uH-8PQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="81u-On-AQT" id="1Bl-Bj-6wZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="424"/>
+        </scene>
+    </scenes>
+</document>
