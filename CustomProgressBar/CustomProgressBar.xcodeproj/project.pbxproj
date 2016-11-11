@@ -12,19 +12,8 @@
 		5635DE2219F0688F0059D95E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5635DE2019F0688F0059D95E /* Main.storyboard */; };
 		5635DE2419F0688F0059D95E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5635DE2319F0688F0059D95E /* Images.xcassets */; };
 		5635DE2719F0688F0059D95E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5635DE2519F0688F0059D95E /* LaunchScreen.xib */; };
-		5635DE3319F0688F0059D95E /* CustomProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635DE3219F0688F0059D95E /* CustomProgressBarTests.swift */; };
 		5635DE3D19F06A750059D95E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635DE3C19F06A750059D95E /* ProgressView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5635DE2D19F0688F0059D95E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5635DE0F19F0688F0059D95E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5635DE1619F0688F0059D95E;
-			remoteInfo = CustomProgressBar;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5635DE1719F0688F0059D95E /* CustomProgressBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomProgressBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,7 +23,6 @@
 		5635DE2119F0688F0059D95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5635DE2319F0688F0059D95E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5635DE2619F0688F0059D95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5635DE2C19F0688F0059D95E /* CustomProgressBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomProgressBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5635DE3119F0688F0059D95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5635DE3219F0688F0059D95E /* CustomProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBarTests.swift; sourceTree = "<group>"; };
 		5635DE3C19F06A750059D95E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -42,13 +30,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5635DE1419F0688F0059D95E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5635DE2919F0688F0059D95E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				5635DE1719F0688F0059D95E /* CustomProgressBar.app */,
-				5635DE2C19F0688F0059D95E /* CustomProgressBarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,39 +115,18 @@
 			productReference = 5635DE1719F0688F0059D95E /* CustomProgressBar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5635DE2B19F0688F0059D95E /* CustomProgressBarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5635DE3919F0688F0059D95E /* Build configuration list for PBXNativeTarget "CustomProgressBarTests" */;
-			buildPhases = (
-				5635DE2819F0688F0059D95E /* Sources */,
-				5635DE2919F0688F0059D95E /* Frameworks */,
-				5635DE2A19F0688F0059D95E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5635DE2E19F0688F0059D95E /* PBXTargetDependency */,
-			);
-			name = CustomProgressBarTests;
-			productName = CustomProgressBarTests;
-			productReference = 5635DE2C19F0688F0059D95E /* CustomProgressBarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5635DE0F19F0688F0059D95E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Sztanyi Szabolcs";
 				TargetAttributes = {
 					5635DE1619F0688F0059D95E = {
 						CreatedOnToolsVersion = 6.0.1;
-					};
-					5635DE2B19F0688F0059D95E = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = 5635DE1619F0688F0059D95E;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -185,7 +144,6 @@
 			projectRoot = "";
 			targets = (
 				5635DE1619F0688F0059D95E /* CustomProgressBar */,
-				5635DE2B19F0688F0059D95E /* CustomProgressBarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +156,6 @@
 				5635DE2219F0688F0059D95E /* Main.storyboard in Resources */,
 				5635DE2719F0688F0059D95E /* LaunchScreen.xib in Resources */,
 				5635DE2419F0688F0059D95E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5635DE2A19F0688F0059D95E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,23 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5635DE2819F0688F0059D95E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5635DE3319F0688F0059D95E /* CustomProgressBarTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5635DE2E19F0688F0059D95E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5635DE1619F0688F0059D95E /* CustomProgressBar */;
-			targetProxy = 5635DE2D19F0688F0059D95E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5635DE2019F0688F0059D95E /* Main.storyboard */ = {
@@ -272,15 +207,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -314,8 +253,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -323,6 +264,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -332,6 +274,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -343,8 +286,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CustomProgressBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ZappDesignTemplates.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -355,42 +300,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CustomProgressBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ZappDesignTemplates.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		5635DE3A19F0688F0059D95E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CustomProgressBarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomProgressBar.app/CustomProgressBar";
-			};
-			name = Debug;
-		};
-		5635DE3B19F0688F0059D95E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CustomProgressBarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomProgressBar.app/CustomProgressBar";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -413,14 +326,7 @@
 				5635DE3819F0688F0059D95E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		5635DE3919F0688F0059D95E /* Build configuration list for PBXNativeTarget "CustomProgressBarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5635DE3A19F0688F0059D95E /* Debug */,
-				5635DE3B19F0688F0059D95E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

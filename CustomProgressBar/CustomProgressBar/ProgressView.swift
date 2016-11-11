@@ -13,51 +13,50 @@ protocol ProgressViewDelegate {
     func progressViewProgressStopped()
 }
 
-class ProgressView: UIView {
+class ProgressView: UIView, CAAnimationDelegate {
 
     private let progressLayer: CAShapeLayer = CAShapeLayer()
-    
-    private var progressLabel: UILabel
+    private var progressLabel: UILabel!
     
     var delegate: ProgressViewDelegate?
     
-    required init(coder aDecoder: NSCoder) {
-        progressLabel = UILabel()
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+
         createProgressLayer()
         createLabel()
     }
     
     override init(frame: CGRect) {
-        progressLabel = UILabel()
         super.init(frame: frame)
+
         createProgressLayer()
         createLabel()
     }
     
     func createLabel() {
-        progressLabel = UILabel(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 60.0))
-        progressLabel.textColor = .whiteColor()
-        progressLabel.textAlignment = .Center
+        progressLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: frame.width, height: 60.0))
+        progressLabel.textColor = .white
+        progressLabel.textAlignment = .center
         progressLabel.text = "Load content"
         progressLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 40.0)
-        progressLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        progressLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(progressLabel)
         
-        addConstraint(NSLayoutConstraint(item: self, attribute: .CenterX, relatedBy: .Equal, toItem: progressLabel, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: self, attribute: .CenterY, relatedBy: .Equal, toItem: progressLabel, attribute: .CenterY, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: progressLabel, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: progressLabel, attribute: .centerY, multiplier: 1.0, constant: 0.0))
     }
     
-    private func createProgressLayer() {
+    fileprivate func createProgressLayer() {
         let startAngle = CGFloat(M_PI_2)
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
-        let centerPoint = CGPointMake(CGRectGetWidth(frame)/2 , CGRectGetHeight(frame)/2)
+        let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
         
-        var gradientMaskLayer = gradientMask()
-        progressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: CGRectGetWidth(frame)/2 - 30.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
-        progressLayer.backgroundColor = UIColor.clearColor().CGColor
+        let gradientMaskLayer = gradientMask()
+        progressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 30.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
+        progressLayer.backgroundColor = UIColor.clear.cgColor
         progressLayer.fillColor = nil
-        progressLayer.strokeColor = UIColor.blackColor().CGColor
+        progressLayer.strokeColor = UIColor.black.cgColor
         progressLayer.lineWidth = 4.0
         progressLayer.strokeStart = 0.0
         progressLayer.strokeEnd = 0.0
@@ -66,14 +65,14 @@ class ProgressView: UIView {
         layer.addSublayer(gradientMaskLayer)
     }
     
-    private func gradientMask() -> CAGradientLayer {
+    fileprivate func gradientMask() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
 
         gradientLayer.locations = [0.0, 1.0]
         
-        let colorTop: AnyObject = UIColor(red: 255.0/255.0, green: 213.0/255.0, blue: 63.0/255.0, alpha: 1.0).CGColor
-        let colorBottom: AnyObject = UIColor(red: 255.0/255.0, green: 198.0/255.0, blue: 5.0/255.0, alpha: 1.0).CGColor
+        let colorTop: AnyObject = UIColor(red: 255.0/255.0, green: 213.0/255.0, blue: 63.0/255.0, alpha: 1.0).cgColor
+        let colorBottom: AnyObject = UIColor(red: 255.0/255.0, green: 198.0/255.0, blue: 5.0/255.0, alpha: 1.0).cgColor
         let arrayOfColors: [AnyObject] = [colorTop, colorBottom]
         gradientLayer.colors = arrayOfColors
         
@@ -95,17 +94,17 @@ class ProgressView: UIView {
         animation.toValue = CGFloat(1.0)
         animation.duration = 1.0
         animation.delegate = self
-        animation.removedOnCompletion = false
-        animation.additive = true
+        animation.isRemovedOnCompletion = false
+        animation.isAdditive = true
         animation.fillMode = kCAFillModeForwards
-        progressLayer.addAnimation(animation, forKey: "strokeEnd")
+        progressLayer.add(animation, forKey: "strokeEnd")
     }
 
-    override func animationDidStart(anim: CAAnimation!) {
+    func animationDidStart(_ anim: CAAnimation) {
         delegate?.progressViewProgressStarted()
     }
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         progressLabel.text = "Done"
         delegate?.progressViewProgressStopped()
     }

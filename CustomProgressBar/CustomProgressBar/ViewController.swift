@@ -12,11 +12,11 @@ class ViewController: UIViewController, ProgressViewDelegate {
 
     @IBOutlet var progressView: ProgressView!
 
-    @IBAction func presentProgressView(sender: AnyObject) {
+    @IBAction func hideProgressView() {
         progressView.hideProgressView()
     }
     
-    @IBAction func animateProgressView(sender: AnyObject) {
+    @IBAction func animateProgressView() {
         progressView.animateProgressView()
     }
     
@@ -35,8 +35,8 @@ class ViewController: UIViewController, ProgressViewDelegate {
         progressView.delegate = self
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
 }
 
